@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Packages for students</title>
+  <link rel="icon" href="images\1.png">
+	 <!--  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+body{
+	 background-image:linear-gradient(to bottom,#C1C8E4,#8860D0,#C1C8E4);
+	 font-family: ;
+}
+
+.loaderbg{
+       position: fixed;
+            z-index: 999;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+    }
+    .loader  {
+  animation: rotate 1s infinite;  
+  height: 50px;
+  width: 50px;
+  position: absolute;
+            top: calc(50vh - 75px);
+            left: calc(50vw - 75px);
+}
+
+.loader:before,
+.loader:after {   
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;  
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;  
+  background-color: #8860D0;
+  box-shadow: 30px 0 0 #C1C8E4;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite; 
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% { 
+    -webkit-transform: rotate(0deg) scale(0.8); 
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% { 
+    -webkit-transform: rotate(360deg) scale(1.2); 
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% { 
+    -webkit-transform: rotate(720deg) scale(0.8); 
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #8860D0;
+  }
+  50% {
+    box-shadow: 0 0 0 #C1C8E4;
+    margin-bottom: 0;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: translate(15px,15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #8860D0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Style the links inside the navigation bar */
+/* .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+} */
+
+
+.topnav a:hover {
+  background-color: #C1C8E4;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #8860D0;
+  color: white;
+}
+.navv{
+	height:100px;
+	/* background-color: green; */
+}
+.mainn{
+	display:flex;
+	flex-direction: row;
+}
+.mainn div{/*
+	width: 33%;*/
+	height: 800px;
+    margin:10px;
+    /* border:1rem; */
+}
+.left{
+    background-color: #C1C8E4;
+	width:250px;
+	margin-left: 20px;
+}
+.middle{
+/*	background-color: grey;*/
+	width:850px;
+	display:flex;
+	flex-direction: column;
+
+}
+.right{
+    /*background-color: #C1C8E4;*/
+	width:400px;
+	height: 1000px;
+}
+.middle div{
+	width:800px;
+	background-color:#F5E6CC;
+	padding-left: 30px;
+ border: 2px solid black; 
+	/*margin:10px;*/
+}
+img{
+	border-radius: 50%;
+  /*  margin:15px;*/
+	/*margin-left: 35px;*/
+	/*margin-right: 35px;*/
+	padding: 10px;
+	 width: 150px;
+    height: 150px;
+}
+div.item {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+    width: 220px;
+    height:200px;
+    border: none;
+    /*border-radius:70%;*/
+ /*   margin:10px;*/
+ padding: 10px;
+    /*background-image:linear-gradient(to right,#C1C8E4,#8860D0);*/
+    background-image: linear-gradient(to right, #fae1dd 0%, #a6c1ee 51%);
+
+}
+/*img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}*/
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+/*img:hover {
+  transform: scale(1.2);  (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
+}*/
+.item:hover {
+   background-image: linear-gradient(to right, #8860D0 0%, #4cc9f0 51%);/* change the direction of the change here */
+}
+
+.right div{
+	background-color: #fae1dd;
+	height: 278px;
+	border:2px solid black;
+	padding:10px;
+	width:400px;
+  border: none;
+	/*display: flex;*/
+
+}
+button{
+	border:0.2px solid blue;
+	color:blue;
+	padding: 10px;
+	cursor: pointer;
+/*	float: left;*/
+	display: block;
+  width:90px;
+	margin:2px;
+}
+button:hover{
+	background-color: lightblue;
+}
+.btn{
+	border:0.2px solid blue;
+	color:blue;
+	padding: 10px;
+	cursor: pointer;
+/*	float: left;*/
+/*	display: block;*/
+	margin:2px;
+	background-color: #f7f7f7;
+	
+}
+.btn:hover{
+background-color: lightblue;
+}
+.Register{
+    padding: 9px 25px;
+    background-color : #C1C8E4;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+</style>
+</head>
+<body>
+  <div class="loaderbg">  
+<div class="loader"></div>
+</div>
+	<div class="topnav">
+  <!-- <a class="active" href="#home">Home</a> -->
+  <!-- <button class="Register" onclick="window.location.href='PROJECT.html'">Home</button> -->
+  <button class="Register" onclick="window.location.href='PROJECT.html'" class="btn"><i class="fa fa-home"> Home</i></button>
+  <div>
+    <span style="font-size: 30px; color: #fae1dd;" id="wel"> </span>
+    <strong id="name" style="font-size: 30px; margin-right: 14px; color: #fae1dd;"></strong>
+  </div>
+ </div>
+
+	<div class="mainn">
+
+	<div class="left">
+		<ASIDE>
+		<div class="login">
+  <h1>Login</h1>
+   <!--  <form method="post"> -->
+    <input type="text"  placeholder="Username"  id="UserName"/>
+    <input type="password"  placeholder="Password"  id="pass" />
+      <button type="submit"  id="submit" onclick="submiit()" class="btn btn-primary">Let me in.</button>
+      <br><br>
+      <strong style="font-size: 16px;" id="per"></strong><br><br>
+      <h4 id="email" style="font-size: 14px;"></h4>
+      <h4 id="phone" style="font-size: 14px;"></h4>
+   <!--  </form> -->
+    </div>
+</ASIDE>
+	</div>
+
+
+
+
+	<div class="middle">
+		<div class="one">
+			<h2><i>Highest paying careers for PCM students:</i></h2>
+
+			<div class="item">
+    <img src="images\aeronautical.jpeg"/>
+    <span class="caption"><i>Aeronautics</i></span>
+</div>
+           <div class="item">
+    <img src="images\aritificial_intelligence.jpg"/>
+    <span class="caption"><i>Aritificial Intelligence </i></span>
+</div>
+
+ <div class="item">
+    <img src="images\ce.jpg"/>
+    <span class="caption"><i>Computer Engineer</i></span>
+</div></div>
+
+		<div class="two">
+			<h2><i>Highest paying careers for PCB students:</i></h2>
+
+			<div class="item">
+    <img src="images\environmental_expert.jpg"/>
+    <span class="caption"><i>Environmental expert </i></span>
+</div>
+
+			<div class="item">
+    <img src="images\earth_scientist.jpg"/>
+    <span class="caption"><i> Earth Scientist</i></span>
+</div>
+ <div class="item">
+    <img src="images\bionics.jpeg"/>
+    <span class="caption"><i> Bionics Engineer</i></span>
+</div></div>
+
+		<div class="three">
+
+					<h2><i>More to explore:</i></h2>
+			<div class="item">
+    <img src="images\robotics.jpeg"/>
+    <span class="caption"><i>Robotics</i></span>
+</div>
+
+			<div class="item">
+    <img src="images\ca.jpg"/>
+    <span class="caption"><i>Chartered Accountant</i></span>
+</div>
+ <div class="item">
+    <img src="images\telescope.jpg"/>
+    <span class="caption"><i>Astronomer </i></span>
+    </div></div>
+
+    <div class="one" style="padding: 25px;">
+      <h2><i>JEE Main April and May exam postponed due to COVID-19; new dates will be announced later:</i></h2>
+      <p>JEE Main 2021 Admit Card for Phase – III will be released by NTA post the new exam dates for JEE Main April session are released.
+         Successfully registered candidates can download JEE Main Admit card from nta.ac.in or jeemain.nta.nic.in by logging in with their Application Number and DOB. 
+        Candidates must carry an original ID with their hall ticket for entry in JEE Main Exam Center.</p>
+        <a href="https://testservices.nic.in/jeemainadmitcard/DownloadAdmitCard/AuthCand.aspx">Download the admit card here.</a> </p>
+</div>
+
+		<div class="two"  style="padding: 30px;">
+      <h2><i>Best books to crack NEET 2021:</i></h2>
+      <p>
+        NEET preparation revolves around the base element – books. Getting sorted with the right mix of NEET preparation books is the priority of every NEET aspirant.
+         Hundreds of books are available for NEET, however, having the knowledge of picking the best book for preparation is imp
+         Hence, we bring to you the best set of books for NEET for Physics, Chemistry, and Biology to successfully qualify the NEET UG exam.</p>
+         <a href="https://www.neetexambooster.in/books/neet-books-pdf-free-download/">Click here for PDFs of the books.</a>
+
+</div>
+
+		<div class="three"  style="padding: 30px;">
+
+          <h2><i>Graduate Aptitude Test in Engineering (GATE):</i></h2>
+          <p>he online application processing system or GOAPS is the GATE login. Indian Institute of Technology Bombay,
+             the conducting institute of GATE 2021 has opened the online application processing system on September 11.
+             All the process of application and the related processes will be done through the online application processing system of GATE.</p>
+             <a href="https://appsgate.iitb.ac.in/">Login here, if already registered.</a>
+</div>
+</div>
+<div class="right">
+
+	<div class="subs">
+		<h5><i>Which subjects are you interseted in?</i></h5>
+		<br>
+    <table><tr><td>
+      <button id="ButtonId1" >Maths</button>
+      <button id="ButtonId2" >History</button>
+      <button id="ButtonId3" >Biology</button>
+      <button id="ButtonId5" >Accounts</button></td>
+      <td><img src="images\utd3.png" style="float:right; width:250px;height:215px;"></td></tr>
+    </table>
+
+	</div>
+	<div class="clg">
+   <h5 ><i>Which class are you studying in?</i></h5><br>
+    <table>
+    	<tr><td>
+    <button onclick="myFunction()" >9th &nbsp;</button>
+    <button onclick="myFunction()">10th</button>
+    <button onclick="myFunction()">11th</button>
+    <button onclick="myFunction()">12th</button></td><td>
+    <button onclick="myFunction()">&nbsp; 1st year </button>
+    <button onclick="myFunction()">&nbsp;2nd year</button>
+    <button onclick="myFunction()">&nbsp; 3rd year</button>
+    <button onclick="myFunction()">final year</button></td>
+<td><img src="images\utd1.png" style="	width: 200px;
+	height: 200px;
+	float: right;"></td></tr></table>
+	
+</div>
+	<div class="competitve">
+		<h5><i>Which exam are you preparing for?</i></h5>
+		
+    <table>
+    	<tr><td>
+    <button onclick="myFunction()" style="width:110px;" > Competitve exams</button>
+    <button onclick="myFunction()"  style="width:110px;">Goverment exams</button>
+    <button onclick="myFunction()" style="width:110px;">  Other exams </button></td>
+    <td><img src="images\utd2.png" style="float:right; width:220px;height:215px;"></td></tr></table>
+
+	</div>
+  <div class="ques">
+		<h5><i>Have you been spending your months to prepare for any competitive exams?</i></h5>
+		<br>
+	<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" >
+<label class="btn btn-outline-primary" for="option1">YES</label>
+
+<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+<label class="btn btn-outline-primary" for="option2">NO</label>
+<img src="images\utd4.png" style="float:right; width:210px;height:190px;">
+	
+	</div>
+	<div class="extra" style="padding-left: 50px;">
+   <h5 ><i>What do you like doing besides studying?</i></h5>
+    <table>
+    	<tr><td>
+    <button>Blogging</button>
+    <button>Vlogging</button>
+    <button>Travelling</button>
+    <button>Writing</button>
+</td><td>
+    <button>Loves Art </button>
+    <button>Yoga </button>
+    <button>Gaming</button>
+    <button>Musician</button>
+</td><td>
+  <button>Cooking </button>
+  <button> Filming</button>
+  <button>Editing </button>
+  <button>Speaker</button>
+</td> </tr></table>
+</div>
+<div class="refer">
+    <h5><i>Refer to a friend to win a FREE session with our advisor.</i></h5><br>
+    <button onclick="referFunction()"style="width:150px;">Copy link.</button>
+    <p id="refer"></p>
+    
+
+</div>
+</div>
+<script src=
+"https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+</script>
+<script type="text/javascript">
+  setTimeout(function(){
+    $('.loaderbg').fadeToggle();
+},1500);
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyCoYaY3RtzKGLZeT1gzaoOY2zgw_MxeZ0Y",
+    authDomain: "careercounselling-42088.firebaseapp.com",
+    databaseURL: "https://careercounselling-42088-default-rtdb.firebaseio.com",
+    projectId: "careercounselling-42088",
+    storageBucket: "careercounselling-42088.appspot.com",
+    messagingSenderId: "82986918340",
+    appId: "1:82986918340:web:8a44ca303147476b4f0491",
+    measurementId: "G-9ZECQ9C6XE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+        firebase.initializeApp(firebaseConfig);
+        var UserName,pass;
+        function submiit(){
+
+          UserName = document.getElementById('UserName').value; 
+          pass = document.getElementById('pass').value;
+         // document.getElementById("userr").innerHTML = UserName;
+          firebase.database().ref('users/'+UserName).on('value',function(snapshot){
+
+            if(snapshot.val().password == pass){
+              document.getElementById('wel').innerHTML = "Welcome,";
+              document.getElementById('per').innerHTML = "Personal Information:";
+
+              document.getElementById("name").innerHTML = snapshot.val().name;
+            document.getElementById("email").innerHTML = snapshot.val().Email;
+            document.getElementById("phone").innerHTML = snapshot.val().phoneNo;
+            } else {
+              alert("Your Username or Password is INCORRECT");
+              // document.getElementById("name").innerHTML = "Error";
+            }
+
+          });
+
+
+        }
+  </script>
+
+<script>
+  function myFunction() {
+  alert("Your response has been recorded, We will mail you shortly!!");
+}
+function referFunction() {
+      document.getElementById("refer").innerHTML = "Link Copied, share with your friends!";
+    }
+
+	$(document).ready(function(){
+  $("#ButtonId1").toggle(
+    function(){$("#ButtonId1").css({"background-color": "#8860D0","color": "white"});},
+ 
+    function(){$("#ButtonId1").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+  $("#ButtonId2").toggle(
+    function(){$("#ButtonId2").css({"background-color": "#8860D0","color": "white"});},
+ 
+    function(){$("#ButtonId2").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+  $("#ButtonId3").toggle(
+    function(){$("#ButtonId3").css({"background-color": "#8860D0","color": "white"});},
+ 
+    function(){$("#ButtonId3").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+    $("#ButtonId5").toggle(
+    function(){$("#ButtonId5").css({"background-color": "#8860D0","color": "#f7f7f7"});},
+ 
+    function(){$("#ButtonId5").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+  $("#ButtonIdY").toggle(
+    function(){$("#ButtonIdY").css({"background-color": "#8860D0","color": "#f7f7f7"});},
+ 
+    function(){$("#ButtonIdY").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+  $("#ButtonIdN").toggle(
+    function(){$("#ButtonIdN").css({"background-color": "#8860D0","color": "#f7f7f7"});},
+ 
+    function(){$("#ButtonIdN").css({"background-color": "#f7f7f7","color": "#0275d8"});
+  });
+});
+</script>
+  
+</body>
+</html>

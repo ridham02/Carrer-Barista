@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Barista</title>
+    <link rel="icon" href="images\1.png">
+    <link rel="stylesheet" href="PROJECT.css">
+    <link rel="stylesheet" type="text/css" href="loaders.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <style>
+        
+        .counter{
+
+            font-size: 25px;
+        }
+
+
+#popbtn {
+    box-sizing: border-box;
+  position: fixed;
+  padding: 20px 50px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 19px;
+  overflow: hidden;
+  border-radius: 50%;
+  bottom: 68px;
+  right: 39px;
+  height: 87px;
+}
+
+#popbtn span {
+  position: fixed;
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  letter-spacing: 2px;
+  z-index: 1;
+  margin-left: -27px;
+  margin-top: 8px;
+}
+
+#popbtn .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #8860d05c;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+}
+
+#popbtn .liquid::after,
+#popbtn .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+
+#popbtn .liquid::before {
+  
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+#popbtn .liquid::after {
+  
+  border-radius: 40%;
+  background: rgba(20, 20, 20, .5);
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+
+        /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #8860D0;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+    </style>
+</head>
+<body > 
+    <div class="loader_bg">
+        <div class="loader"> </div>
+        </div>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+    <header id="body-header">
+        
+        
+     
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light "style="background-color:#C1C8E4;" id="nav_bar">
+            <a class="navbar-brand" href="#"><img src="images\1.png" width="27px" height="27px"> Career Barista</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#AboutWeb">About Us </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#CarrerSolutions">Career Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#membership">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact_us">Contact</a>
+                    </li>
+                </ul>
+                <div>
+                    <button class="Register" onclick="window.location.href='Form_Project.html'"> Register</button>
+                </div>
+                </div>
+            </div>
+        </nav>
+        <div id="Home_content">
+            <h2>All About Education</h2>
+            <h4>A complete guide for ambitious and focused students</h4>
+        </div>
+        <div id="FollowUs_Main">
+            <ul id="FollowUs_2" class="text-center horizontal-list">
+                <li>
+                    <a>Follow Us </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/" target="_blank">Linkedin</a>
+                </li>
+                <li>
+                    <a href="https://www.quora.com/" target="_blank">Quora</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section id="AboutWeb">
+        <h2>
+            Impact of Career Barista
+        </h2>
+        <br>
+       
+        <div id="CalInfo">
+            <div class="Impacted">
+                <div class="counter" data-target="80000">0 </div>
+                <p >Students Empowered</p>
+            </div>
+            <div class="Impacted">
+                <div class="counter" data-target="23500">0 </div>
+                <p>Schools Impacted</p>
+            </div>
+            <div class="Impacted" >
+               <div class="counter" data-target="9500">0 </div>
+                <p>Trained Counsellors</p>
+            </div>
+            <div class="Impacted">
+               <div class="counter" data-target="500">0 </div>
+                <p>Govt. Partnerships</p>
+            </div>
+        </div>
+         <p style="margin: 20px 0px 20px 0px; font-size: 26px" >
+            CAREER BARISTA is the <b>INDIA’S LARGEST</b> unbiased career counseling venture that works with 
+            <b>2.5 MILLION STUDENTS</b> yearly while ensuring <b>100% DATA PRIVACY</b>. We currently work with 12 Indian State Governments & <b>73000+</b> schools across India & the Middle East.
+        </p>
+    </section>
+    <div class="flex-container" id="CarrerSolutions">
+        <div class="flex-item">
+            <h2 >Class 9th & 10th Students</h2>
+            We help students from class 9th to 10th to select the stream and subject that suits their aptitude and personality. Our career counselling services help you explore opportunities beyond conventional horizons. Gain from expert guidance and explore the right choices for your career opportunities.<br><br>
+            <a href="https://www.topperlearning.com/topic/cbse-class-10" target="_blank">
+                READ DETAILS
+            </a>
+        </div>  
+        <div class="flex-item">
+            <h2>Class 11th & 12th Students</h2>
+            Our extensive career directory and trained counsellors will make sure that you are guided to the college. Our program includes guidance on college applications process. Benefit from the exceptional support of our counsellors and create a step-by-step plan for your   career progression.<br><br>
+            <a href="https://www.topperlearning.com/topic/class-12" target="_blank">
+                READ DETAILS
+            </a>
+        </div>  
+        <div class="flex-item"><h2>College / Undergrad Students</h2>
+            Are you stuck in a course and college that you dislike? We come to the rescue with our career counselor clearing all your confusions and ensuring that you know how to make that vital switch which leads you to a fulfilling career ahead of you.<br><br>
+            <a href="https://www.topperlearning.com/topic/cbse-class-10" target="_blank">
+                READ DETAILS
+            </a>
+        </div>
+        <div class="flex-item">
+            <h2>Aspiring Career Counsellors</h2>
+            India is in a dire need of 1.4 million career counsellors and we are passionate to bridge the gap. Our 100 hours of blended training program ensures that you not only get trained well, but allows you to partner with us, and  earn Rs. 55,000/- per month.<br><br>
+            <a href="https://www.topperlearning.com/topic/class-12" target="_blank">
+                READ DETAILS
+            </a>
+        </div>  
+    </div>
+    <section id="membership">
+        <div class="price" id="free">
+            <h4>PREVIEW</h4>
+            <hr style="height:2px;border-width:0;color:black;background-color:black;width:80%">
+            <ul>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-8.png">
+                        </span>
+                        Career Assessment
+                        <br>
+                    </strong>
+                    Part 1 of 5-dimensional assessment to assess workstyle.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-3.png">
+                        </span>
+                        Career Content
+                        <br>
+                    </strong>
+                    Well-researched information on hundreds of career options.
+                </li>
+                <li class="locked">
+                    <strong>
+                        <span>
+                            <img src="images/img-4.png">
+                        </span>
+                        34 page Career Report
+                        <br>
+                    </strong>
+                    Detailed assessment report containing top career matches and personalized development plans.
+                </li>
+                <li class="locked">
+                    <strong>
+                        <span>
+                            <img src="images/img-4.png">
+                        </span>
+                        Career Counselling
+                        <br>
+                    </strong>
+                    Face-to-face counselling sessions and guidance from career experts and online support.
+                </li>
+                <li class="locked">
+                    <strong>
+                        <span>
+                            <img src="images/img-4.png">
+                        </span>
+                        Dedicated Career Mentor
+                        <br>
+                    </strong>
+                    Personalised mentoring, goal monitoring and 24*7 support for 1 year.
+                </li>
+            </ul>
+                <div >
+                    <button class="btn btn-primary" onclick="window.location.href='Form_Project.html'">FREE</button>
+                </div>
+        </div>
+        <div class="price" id="gold">
+            <h4>EXPLORE</h4>
+            <hr style="height:2px;border-width:0;color:black;background-color:black;width:80%">
+            <ul>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-8.png">
+                        </span>
+                        Career Assessment
+                        <br>
+                    </strong>
+                    Part 1 of 5-dimensional assessment to assess workstyle.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-3.png">
+                        </span>
+                        Career Content
+                        <br>
+                    </strong>
+                    Well-researched information on hundreds of career options.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-5.png">
+                        </span>
+                        34 page Career Report
+                        <br>
+                    </strong>
+                    Detailed assessment report containing top career matches and personalized development plans.
+                </li>
+                <li class="locked">
+                    <strong>
+                        <span>
+                            <img src="images/img-4.png">
+                        </span>
+                        Career Counselling
+                        <br>
+                    </strong>
+                    Face-to-face counselling sessions and guidance from career experts and online support.
+                </li>
+                <li class="locked">
+                    <strong>
+                        <span>
+                            <img src="images/img-4.png">
+                        </span>
+                        Dedicated Career Mentor
+                        <br>
+                    </strong>
+                    Personalised mentoring, goal monitoring and 24*7 support for 1 year.
+                </li>
+            </ul>
+                <div >
+                    <button class="btn btn-primary" onclick="window.location.href='payment2.html'">₹300</button>
+                </div>
+        </div>
+        <div class="price" id="platinum">
+            <h4>REALIZE</h4>
+            <hr style="height:2px;border-width:0;color:black;background-color:black;width:80%">
+            <ul>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-8.png">
+                        </span>
+                        Carrer Assessment
+                        <br>
+                    </strong>
+                    Part 1 of 5-dimensional assessment to assess workstyle.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-3.png">
+                        </span>
+                        Career Content
+                        <br>
+                    </strong>
+                    Well-researched information on hundreds of career options.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-5.png">
+                        </span>
+                        34 page Career Report
+                        <br>
+                    </strong>
+                    Detailed assessment report containing top career matches and personalized development plans.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-6.png">
+                        </span>
+                        Career Counselling
+                        <br>
+                    </strong>
+                    Face-to-face counselling sessions and guidance from career experts and online support.
+                </li>
+                <li>
+                    <strong>
+                        <span>
+                            <img src="images/img-7.png">
+                        </span>
+                        Dedicated Career Mentor
+                        <br>
+                    </strong>
+                    Personalised mentoring, goal monitoring and 24*7 support for 1 year.
+                </li>
+            </ul>
+                <div >
+                    <button class="btn btn-primary" onclick="window.location.href='payment2.html'">₹500</button>
+                </div>
+        </div>
+    </section>
+
+
+
+
+<div id='upper-footer'>
+    <div id='innerDiv1'>
+        <h2>/ CUTOFFS, RANK & COLLEGE PREDICTORS</h2>
+        <div style="height: 10px;"></div>
+        <h1 >B.Tech/M.Tech Cutoffs, Rank & College Predictors</h1>
+        <div style="height: 10px;"></div>
+        <h3>Complete information on B.Tech rank predictors, college predictors such as IIT JEE Main and JEE Advaced, IIT M.Tech cutoff, NIT M.Tech cutoffs and many statewise CETs predictors.</h3>
+        <div id="container">
+            <button class="btn" onclick="window.location.href='packages.html'">
+                <span class="circle">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Learn More</span>
+            </button>
+        </div>
+    </div>
+    <div id='innerDiv2'>
+        <div id="btechrank">
+            <h1>B.Tech Rank</h1>
+            <br><br>
+            <button class="rankbutton" onclick="window.location.href='jeeRP.html'">JEE Main Rank</button>
+            <div style="height: 20px;"></div>
+            <button class="rankbutton"  onclick="window.location.href='jeeCP.html'">JEE Main Colleges</button>
+            <div style="height: 20px;"></div>
+            <button class="rankbutton" onclick="myFunction()">JEE Adv Rank</button>
+            <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">JEE Adv Colleges</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">BITSAT Rank</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">BITSAT Colleges</button>
+                <div style="height: 20px;"></div>
+            </div>
+        <div id="mtechrank">
+            <h1>M.Tech Rank</h1>
+            <br><br>
+                <button class="rankbutton" onclick="myFunction()">Gate Score</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">IIT M.Tech</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">NIT M.Tech</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">BITSAT M.Tech</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">UPSEE Colleges</button>
+                <div style="height: 20px;"></div>
+                <button class="rankbutton" onclick="myFunction()">KEAM Colleges</button>
+            </div>
+        </div>
+    </div>
+
+    <a onclick="popup()" id="popbtn">
+  <span id="countdown"></span>
+  <div class="liquid"></div>
+</a>
+
+        <footer class="footer" id="Contact_us">
+            <div class="footer__addr">
+              <h1 class="footer__logo">Dream About your Career</h1>
+                  
+              <h2>Contact Us</h2>
+              
+              <address>
+                #111 sector 17 Chandigarh<br>
+                <div style="width:250px; margin-top: 10px;">    
+
+                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+
+              
+
+                <button class="footer__btn" onclick="window.location.href='Feedback.html'" style="color:black;">Feedback Us</button>
+                </div>
+              </address>
+            </div>
+            
+            <ul class="footer__nav">
+              <li class="nav__item">
+                <h2 class="nav__title">Media</h2>
+          
+                <ul class="nav__ul">
+                  <li>
+                    <a href="#">Online</a>
+                  </li>
+          
+                  <li>
+                    <a href="#">Print</a>
+                  </li>
+                      
+                  <li>
+                    <a href="#">Alternative Ads</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">Technology</h2>
+                
+                <ul class="nav__ul nav__ul--extra">
+                  <li>
+                    <a href="#">Hardware Design</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Software Design</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Digital Signage</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Automation</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Artificial Intelligence</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">IoT</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li class="nav__item">
+                <h2 class="nav__title">Legal</h2>
+                
+                <ul class="nav__ul">
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Sitemap</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            
+            <div class="legal">
+              <p>&copy; 2021 Copyright. All rights reserved.</p>
+              <div class="legal__links">
+               
+                <button id="myBtn" > <span>Made with <span class="heart">♥</span> By Us</span></button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+        <h2>Team Members</h2>
+      <span class="close">&times;</span>
+      
+    </div>
+    <div class="modal-body">
+      <p>Ritika Kapre  &nbsp;&nbsp; 2010992051 </p>
+      <p>Rakshit Kamboj &nbsp;&nbsp; 2010991987</p>
+      <p>Ramneet Singh &nbsp;&nbsp; 2010991989</p>
+      <p>Ridham Arora &nbsp;&nbsp; 2010991991</p>
+    </div>
+    
+  </div>
+
+</div>
+              </div>
+            </div>
+          </footer>
+          <script >
+setTimeout(function(){
+    $('.loader_bg').fadeToggle();
+},1500);
+
+const counters = document.querySelectorAll('.counter');
+const speed = 500; // The lower the slower
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        // Lower inc to slow and higher to slow
+        const inc = target / speed;
+
+        // console.log(inc);
+        // console.log(count);
+
+        // Check if target is reached
+        if (count < target) {
+            // Add inc to count and output in counter
+            counter.innerText = count + inc;
+            // Call function every ms
+            setTimeout(updateCount, 1);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCount();
+});
+const startingMinutes=20;
+    let time =startingMinutes*60;
+
+    const countdownEl=document.getElementById("countdown");
+    setInterval(updatecountdown,1000);
+
+    function updatecountdown(){
+
+        const minutes=Math.floor(time/60);
+        let seconds = time%60;
+
+        seconds=seconds<10 ? '0' +seconds: seconds;
+        countdownEl.innerHTML =minutes +":"+ seconds;
+        time--;
+    }
+
+function popup(){
+    swal("NOW OR NEVER!!","This is a one time offer to have a free live mentoring session!", {
+  buttons: {
+    catch: {
+      text: "REJECT",
+      value: "catch",
+    },
+    ACCEPT: true,
+  },
+})
+.then((value) => {
+  switch (value) {
+ 
+    case "ACCEPT":
+      window.location.replace("Booking.html");
+      break;
+ 
+    case "catch":
+      swal("Dammnnnn!", "You missed it forever!", "warning");
+      break;
+ 
+
+  }
+});
+}
+
+function myFunction() {
+   swal("SERVER ERROR!", "Please try again after sometime.");
+}
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+          </script>
+</body>
+</html>

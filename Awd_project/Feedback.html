@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feedback</title>
+  <link rel="icon" href="images\1.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <style type="text/css">
+  	@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+  	* {
+  		margin: 0;
+  		padding: 0;
+  		font-family: "Poppins", sans-serif;
+  		box-sizing: border-box;
+  		outline: none;
+  		color: black;
+	}
+	section {
+  		position: absolute;
+  		height: 100%;
+  		width: 100%;
+  		background-image:linear-gradient(#8860d0,#84ceeb);
+  		background-size: cover;
+  		background-position: center;
+	}
+	body {
+  		display: flex;
+  		min-height: 100vh;
+  		align-items: center;
+  		justify-content: center;
+	}
+	.container {
+  		width: 360px;
+  		background:white;
+  		box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
+  		opacity: 0.9;
+  		transform: scale(1.2);
+	}
+	.container form {
+  		width: 100%;
+  		text-align: center;
+  		padding: 25px 20px;
+	}
+	form h1 {
+  		padding: 10px 0;
+  		color: black;
+	}
+	form .id {
+  		position: relative;
+	}
+	.id i {
+  		position: absolute;
+  		font-size: 20px;
+  		top: 50%;
+  		right: 20px;
+  		transform: translateY(-50%);
+	}
+	form input {
+  		width: 100%;
+  		height: 50px;
+  		margin: 4px 0;
+  		border: 1px solid black;
+  		border-radius: 3px;
+  		padding: 0 15px;
+  		padding-right: 45px;
+  		font-size: 20px;
+	}
+	form textarea {
+  		padding: 5px 15px;
+  		border: 1px solid black;
+  		border-radius: 3px;
+  		font-size: 20px;
+  		width: 100%;
+  		margin: 4px 0;
+	}
+	form button {
+  		margin-top: 5px;
+  		border: none;
+  		background: linear-gradient(#8860d0,#84ceeb);
+  		color: #fff;
+  		padding: 10px 0;
+  		width: 100%;
+  		font-size: 25px;
+  		font-weight: 800;
+  		letter-spacing: 2px;
+  		cursor: pointer;
+  		border-radius: 3px;
+	}
+	form button:hover {
+  		background: linear-gradient(#84ceeb,#8860d0);
+	}
+	form input:focus,
+	form textarea:focus {
+  		border: 1px solid #8860d0;
+  		color: #8860d0;
+  		transition: all 0.3s ease;
+	}
+	form input:focus::placeholder,
+	form textarea:focus::placeholder {
+  		padding-left: 4px;
+  		color: #8860d0;
+  		transition: all 0.3s ease;
+	}
+	form input:focus + i {
+ 	 	color: #8860d0;
+  		transition: all 0.3s ease;
+	}
+  </style>
+</head>
+<body>
+	<section></section>
+	<div class="container">
+		<form onclick="submitfeedback()">
+			<h1>Give your Feedback</h1>
+			<div class="id">
+				<input type="text" placeholder="Full name" id="name" required>
+				<i class="far fa-user"></i>
+			</div>
+			<div class="id">
+				<input type="email" placeholder="Email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email is Invalid" id="email" required>
+				<i class="far fa-envelope"></i>
+			</div>
+			<textarea cols="15" rows="5" placeholder="Enter your opinions here.." id="feedback"></textarea>
+			<div class="button">
+				<input type="submit" value="Sign Up">
+			  </div>
+		</form>
+	</div>
+	<script src=
+	"https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+	</script>
+ 
+	<script>
+	 
+	 var firebaseConfig = {
+    apiKey: "AIzaSyCoYaY3RtzKGLZeT1gzaoOY2zgw_MxeZ0Y",
+    authDomain: "careercounselling-42088.firebaseapp.com",
+    databaseURL: "https://careercounselling-42088-default-rtdb.firebaseio.com",
+    projectId: "careercounselling-42088",
+    storageBucket: "careercounselling-42088.appspot.com",
+    messagingSenderId: "82986918340",
+    appId: "1:82986918340:web:8a44ca303147476b4f0491",
+    measurementId: "G-9ZECQ9C6XE",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+	//var FullName, Feedback, email;
+	function Ready(){ 
+	  
+	  
+	 
+	 
+	}
+  function submitfeedback(){ 
+	
+	var FullName = document.getElementById('name').value;
+	var Feedback = document.getElementById('feedback').value;
+	var email = document.getElementById('email').value;
+		  
+			//Ready();
+			firebase.database().ref('feedbacks').set({
+				name:document.getElementById('name').value ,
+				email: document.getElementById('email').value,
+				description :document.getElementById('feedback').value,
+			});
+			 
+		  
+  
+	}
+
+  
+ 
+  
+	</script>
+</body>
+</html>

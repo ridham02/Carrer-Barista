@@ -1,0 +1,359 @@
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Payment Checkout Form</title>
+	<link rel="icon" href="images\1.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+        var targetBox = $("." + inputValue);
+        $(".box").not(targetBox).hide();
+        $(targetBox).show();
+    });
+});
+	</script>
+	<style type="text/css">
+		  .box{
+        color: black;
+        /* padding: 5px; */
+        display: none;
+        margin-top: 10px;
+    }
+		@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu');
+		*{
+			margin: 0;
+  			padding: 0;
+  			box-sizing: border-box;
+  			font-family: 'Ubuntu', sans-serif;
+		}
+
+		body{
+			background-image:linear-gradient(#8860d0,#84ceeb);
+  			margin: 0 5px;
+		}
+
+		.payment{
+			background: #f8f8f8;
+  			max-width: 360px;
+  			margin: 60px auto;
+  			height: auto;
+  			padding: 35px;
+  			padding-top: 70px;
+  			border-radius: 5px;
+  			position: relative;
+		}
+
+	.payment h2{
+  		text-align: center;
+  		letter-spacing: 2px;
+  		margin-bottom: 40px;
+  		color: black;
+	}
+
+	.form .label{
+  		display: block;
+  		color: black;
+ 		 margin-bottom: 6px;
+	}
+
+	.input{
+ 		padding: 13px 0px 13px 25px;
+  		width: 100%;
+  		text-align: center;
+  		border: 2px solid black;
+  		border-radius: 5px;
+  		letter-spacing: 1px;
+  		word-spacing: 3px;
+  		outline: none;
+  		font-size: 16px;
+  		color: #5680e9;
+		}
+
+	.card-grp{
+ 		display: flex;
+ 	 	justify-content: space-between;
+	}
+
+	.card-item{
+  		width: 48%;
+	}
+
+	.space{
+  		margin-bottom: 20px;
+	}
+	.icon-relative{
+ 	 	position: relative;
+	}
+
+	.icon-relative .fas,
+	.icon-relative .far{
+  		position: absolute;
+  		bottom: 12px;
+  		left: 15px;
+  		font-size: 20px;
+  		color: #5680e9;
+	}
+
+	.payment-logo{
+  		position: absolute;
+  		top: -50px;
+  		left: 50%;
+  		transform: translateX(-50%);
+  		width: 100px;
+  		height: 100px;
+  		background:white;
+		border-radius: 50%;
+ 		box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  		text-align: center;
+  		line-height: 85px;
+	}
+
+	.payment-logo:before{
+  		content: "";
+  		position: absolute;
+  		top: 5px;
+  		left: 5px;
+  		width: 90px;
+  		height: 90px;
+  		background: #5ab9ea;
+  		border-radius: 50%;
+	}
+
+	.payment-logo p{
+  		position: relative;
+  		color: white;
+  	font-family: 'Baloo Bhaijaan', cursive;
+  	font-size: 58px;
+	}
+
+
+	@media screen and (max-width: 420px){
+  		.card-grp{
+    		flex-direction: column;
+  		}
+  		.card-item{
+   			width: 100%;
+    		margin-bottom: 20px;
+  		}
+  		.btn{
+    		margin-top: 20px;
+  		}
+	}
+	/*MODAL*/
+	.modal-confirm {		
+		color: black;
+		width: 325px;
+		margin: 30px auto;
+	}
+	.modal-confirm .modal-content {
+		padding: 20px;
+		border-radius: 5px;
+		border: none;
+	}
+	.modal-confirm .modal-header {
+		border-bottom: none;   
+        position: relative;
+	}
+	.modal-confirm h4 {
+		text-align: center;
+		font-size: 26px;
+		margin: 30px 0 -15px;
+	}
+	.modal-confirm .form-control, .modal-confirm .btn {
+		min-height: 40px;
+		border-radius: 3px; 
+	}
+	.modal-confirm .close {
+        position: absolute;
+		top: -5px;
+		right: -5px;
+	}	
+	.modal-confirm .modal-footer {
+		border: none;
+		text-align: center;
+		border-radius: 5px;
+		font-size: 13px;
+	}	
+	.modal-confirm .icon-box {
+		color: #fff;		
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: -70px;
+		width: 95px;
+		height: 95px;
+		border-radius: 50%;
+		z-index: 9;
+		background: #8860d0;
+		padding: 15px;
+		text-align: center;
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+	}
+	.modal-confirm .icon-box i {
+		font-size: 58px;
+		position: relative;
+		top: 3px;
+	}
+	.modal-confirm.modal-dialog {
+		margin-top: 80px;
+	}
+    .modal-confirm .btn {
+        color: #fff;
+        border-radius: 4px;
+		background: #8860d0;
+		text-decoration: none;
+		transition: all 0.4s;
+        line-height: normal;
+        border: none;
+    }
+	.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+		background: #8860d0;
+		outline: none;
+	}
+	.trigger-btn {
+		margin-top: 40px;
+  		background: #5ab9ea;
+  		padding: 12px;
+  		text-align: center;
+  		color: #f8f8f8;
+  		border-radius: 5px;
+  		cursor: pointer;
+	}
+	.payment-details div{
+		 display: flex;
+      flex-direction: row;
+      /* justify-content: start; */
+      /* align-items: flex-start; */
+      justify-content: space-between;
+
+	}
+	span{
+		 height: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0;
+	}
+	.payment-details{
+		 margin-top: 1rem;
+    width: 100%;
+	}
+
+	</style>
+</head>
+<body>
+	
+
+
+<div class="wrapper">
+  <div class="payment">
+    <div class="payment-logo">
+      <p>p</p>
+    </div>
+    
+    
+    <h2>Payment Gateway</h2>
+    <div class="form">
+      <div class="card space icon-relative">
+        <label class="label">Card holder:</label>
+        <input type="text" class="input" placeholder="Name on Card">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="card space icon-relative">
+        <label class="label">Card number:</label>
+        <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number" required>
+        <i class="far fa-credit-card"></i>
+      </div>
+      <div class="card-grp space">
+        <div class="card-item icon-relative">
+          <label class="label">Expiry date:</label>
+          <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="card-item icon-relative">
+          <label class="label">CVC:</label>
+          <input type="password" class="input" data-mask="000" placeholder="000">
+          <i class="fas fa-lock"></i>
+        </div>
+      </div>
+
+         <div>
+             
+        <label><input type="radio" name="colorRadio" value="red"> Pay ₹300</label> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="colorRadio" value="green"> Pay ₹500</label>
+        
+    </div>
+    <div class="red box"><div class="payment-details">
+		<div class="subtotal">
+		  <span class="category">Sub-Total:</span> 
+		  <span class="price">₹300.00 </span>
+		</div>
+		<div class="gst">
+		  <span class="category">18% GST:</span> 
+		  <span class="price">₹54.00 </span>
+		</div><br>
+		
+		<div class="total">
+		  <span class="category"><b>Total:</b></span> 
+		  <span class="price"><b>₹354.00 </b></span>
+		</div>
+	  </div>
+  </div>
+    <div class="green box"><div class="payment-details">
+		<div class="subtotal">
+		  <span class="category">Sub-Total:</span> 
+		  <span class="price">₹500.00 </span>
+		</div>
+		<div class="gst">
+		  <span class="category">18% GST:</span> 
+		  <span class="price">₹90.00 </span>
+		</div><br>
+		
+		<div class="total">
+		  <span class="category"><b>Total:</b></span> 
+		  <span class="price"><b>₹590.00 </b></span>
+		</div>
+	  </div></div>
+   
+      <div href="#myModal" class="trigger-btn" data-toggle="modal">
+        Pay
+      </div> 
+      
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">Awesome!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal" onclick="window.location.href='packages.html'">OK</button>
+			</div>
+		</div>
+	</div>
+</div>  
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+</body>
+</html>
